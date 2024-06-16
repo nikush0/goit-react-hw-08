@@ -1,17 +1,17 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useId } from "react";
-import * as Yup from 'Yup';
+import * as yup from 'yup';
 import css from "./ContactForm.module.css";
 import { addContact } from "../../redux/contacts/operations.js";
 import { useDispatch } from "react-redux";
 import toast from "react-hot-toast";
 
-const UserSchema = Yup.object().shape({
-  userName: Yup.string()
+const UserSchema = yup.object().shape({
+  userName: yup.string()
     .min(3, "Too Short!")
     .max(50, "Maximum 30 characters!")
     .required("Required!"),
-  userNumber: Yup.string()
+  userNumber: yup.string()
     .matches(/^[0-9]*$/, "Need to enter numbers")
     .min(5, "Too Short!")
     .required("Required!"),
