@@ -29,6 +29,7 @@ export default function RegistrationForm() {
         email: "",
         password: "",
       }}
+      //   validationSchema={UserSchema}
       onSubmit={handleSubmit}
     >
       <Form className={css.form} autoComplete="off">
